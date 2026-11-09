@@ -49,6 +49,13 @@ Public URL: `https://raw.githubusercontent.com/Alireza-Farhadpour/alfa-instagram
   19:00 [Asia/Tehran] ("publish the approved post"); if it is already past 19:00, publish now.
 - If there is no approval, publish nothing.
 
+## 5b. AUTO-PUBLISH mode (only when the task prompt says "AUTO-PUBLISH")
+Skip the approval request. Still run the full QA in step 2. Send the slides and caption to the user for information
+(SendUserFile + SendUserMessage + PushNotification: "پست امشب آماده است و ساعت ۱۹ خودکار منتشر می‌شود؛ اگر نمی‌خواهید منتشر شود، تا قبل از ۱۹ بنویسید «توقف»").
+Then schedule a wake-up in this session with send_later at 19:00 [Asia/Tehran] ("publish the post now unless the user said stop")
+— or publish immediately if it is already past 19:00. If the user wrote «توقف»/stop or asked for changes before 19:00, do not
+publish until the changes are made / they say go. If QA finds a problem you cannot fix, do NOT auto-publish; tell the user.
+
 ## 6. Publish (Composio, Instagram account alias "alfa.pmi", ig_user_id 39892526913695793)
 1. INSTAGRAM_CREATE_CAROUSEL_CONTAINER with child_image_urls (ordered raw URLs, 2–10) and the caption.
 2. INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH with the returned creation_id (parent id, not child ids).

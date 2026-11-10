@@ -24,6 +24,10 @@ experienced project planning & control trainer (PMBOK 8, Primavera P6, MS Projec
   Big orange-gold number or keyword, keyword in glowing cyan, chevrons on top, orange arc, a NEW topic illustration
   drawn in SVG in the middle, small horizontal logo at the bottom, small PMBOK 8 stamp bottom-right (only if the topic
   is PMBOK-based).
+- Cover connector words (MANDATORY, user rule 2026-11-10): a connector word between the two title keywords, such as «یا»
+  («ریسک یا مسئله؟»), is NEVER plain white inline text. Put it in a small gold circle badge (~92px, gradient #D9BC8C→#AE9471,
+  navy text ~46px, soft gold glow) centred between the keywords. Build the title line as a flex row
+  (`display:flex; align-items:center; gap:28px`) with the badge as its own `<span class="ya">`, so spacing is equal on both sides.
 - Palette: navy bg (assets/content_bg.png), gold #AE9471, cyan #00B0F0, orange #FF9A3C, red #FF3D5A, lavender #B4C7E7.
 - Sizes: titles 58px, body 36–39px, card titles 46px, English subtitles 44px. Fonts: Vazirmatn (Persian), Source Sans 3 (English).
 - Content slides: chip on top, title + accent line, hero chart panel, short def card, optional cyan answer chip, swipe bar.
